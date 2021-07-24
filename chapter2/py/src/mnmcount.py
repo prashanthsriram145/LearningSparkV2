@@ -9,10 +9,7 @@ if __name__ == "__main__":
         print("Usage: mnmcount <file>", file=sys.stderr)
         sys.exit(-1)
 
-    spark = (SparkSession
-        .builder
-        .appName("PythonMnMCount")
-        .getOrCreate())
+    spark = SparkSession.builder.appName("PythonMnMCount").getOrCreate()
     # get the M&M data set file name
     mnm_file = sys.argv[1]
     # read the file into a Spark DataFrame
